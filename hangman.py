@@ -12,26 +12,26 @@ BLUE = "\033[34m"
 YELLOW = "\033[33m"
 LIGHT_GRAY = "\033[37m"
 
+# Load the word list once
+WORDS = [
+    'python', 'hangman', 'challenge', 'programming', 'developer',
+    'algorithm', 'function', 'variable', 'syntax', 'exception',
+    'iteration', 'recursion', 'compiler', 'interpreter', 'debugging',
+    'inheritance', 'polymorphism', 'encapsulation', 'abstraction',
+    'lambda', 'database', 'framework', 'library', 'module',
+    'package', 'virtualization', 'encryption', 'compression',
+    'deployment', 'container', 'orchestration', 'binary', 'cache',
+    'optimization', 'parallelization', 'threading', 'asynchronous',
+    'synchronization', 'networking', 'protocol', 'architecture',
+    'interface', 'middleware', 'scalability', 'firewall', 'kernel',
+    'router', 'switch', 'gateway', 'bandwidth', 'latency'
+]
+
 def get_random_word():
     """
-    This function selects and returns a random word from a predefined list of words.
+    This function selects and returns a random word from the predefined list of words.
     """
-    words = [
-        'python', 'hangman', 'challenge', 'programming', 'developer',
-        'algorithm', 'function', 'variable', 'syntax', 'exception',
-        'iteration', 'recursion', 'compiler', 'interpreter', 'debugging',
-        'inheritance', 'polymorphism', 'encapsulation', 'abstraction',
-        'lambda', 'database', 'framework', 'library', 'module',
-        'package', 'virtualization', 'encryption', 'compression',
-        'deployment', 'container', 'orchestration', 'binary', 'cache',
-        'optimization', 'parallelization', 'threading', 'asynchronous',
-        'synchronization', 'networking', 'protocol', 'architecture',
-        'interface', 'middleware', 'scalability', 'firewall', 'kernel',
-        'router', 'switch', 'gateway', 'bandwidth', 'latency'
-    ]  # Expanded list of possible words
-    
-    chosen_word = random.choice(words)  # Randomly select a word from the list
-    return chosen_word.upper()  # Return the chosen word in uppercase letters
+    return random.choice(WORDS).upper()
 
 def display_hangman(tries):
     """
@@ -133,6 +133,7 @@ def save_high_score(player_name, score, word, attempts, game_duration, guesses):
         data = {"high_scores": []}
 
     data["high_scores"].append(high_score_data)
+    data["high_scores"].sort(key=lambda x: x["score"], reverse=True)  # Keep sorted
 
     with open("hangman_scores.json", "w") as file:
         json.dump(data, file, indent=4)
