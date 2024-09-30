@@ -1,3 +1,4 @@
 # Ignore the hangman_scores.json file
 hangman_scores.json
 workflow.json
+__pycache__
