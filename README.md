@@ -108,7 +108,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 
 ## 14. **Performance Optimization**
 
-- **Efficient Algorithms**: Review and optimize algorithms to ensure the game runs smoothly, especially when scaling up features like large word lists or multiplayer modes.
+- ~~**Efficient Algorithms**: Review and optimize algorithms to ensure the game runs smoothly, especially when scaling up features like large word lists or multiplayer modes.~~
 - **Resource Management**: Ensure that resources (e.g., memory, file handles) are properly managed to prevent leaks and ensure optimal performance.
 
 ---
@@ -121,8 +121,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). 
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-*Happy Coding!* :smile: 
+*Happy Coding!* :smile:
