@@ -1,14 +1,9 @@
-import json
 from datetime import datetime
+from utils import load_json_file, save_json_file
 
 def save_high_score(player_name, score, word, attempts, game_duration, guesses):
     """
     This function saves the high score data to a JSON file.
-    It first creates a dictionary with all the necessary information about the high score.
-    Then, it tries to open the existing JSON file to load the current high scores.
-    If the file does not exist, it creates a new list to store the high scores.
-    Finally, it appends the new high score to the list, sorts the list by score in descending order,
-    and writes the updated list back to the JSON file.
     """
     high_score_data = {
         "player_name": player_name,
@@ -21,31 +16,18 @@ def save_high_score(player_name, score, word, attempts, game_duration, guesses):
         "guesses": guesses
     }
 
-    try:
-        # Try to open the existing JSON file to load the current high scores
-        with open("hangman_scores.json", "r") as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        # If the file does not exist, create a new list to store the high scores
-        data = {"high_scores": []}
+    data = load_json_file("hangman_scores.json")
+    if "high_scores" not in data:
+        data["high_scores"] = []
 
-    # Append the new high score to the list
     data["high_scores"].append(high_score_data)
-    # Sort the list by score in descending order
     data["high_scores"].sort(key=lambda x: x["score"], reverse=True)
 
-    # Write the updated list back to the JSON file
-    with open("hangman_scores.json", "w") as file:
-        json.dump(data, file, indent=4)
+    save_json_file("hangman_scores.json", data)
 
 def load_high_scores():
     """
     This function loads the high scores from the JSON file.
-    If the file does not exist, it returns an empty list.
     """
-    try:
-        with open("hangman_scores.json", "r") as file:
-            data = json.load(file)
-            return data["high_scores"]
-    except FileNotFoundError:
-        return []
+    data = load_json_file("hangman_scores.json")
+    return data.get("high_scores", [])

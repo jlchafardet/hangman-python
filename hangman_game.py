@@ -2,6 +2,7 @@ from datetime import datetime
 from word_selection import get_random_word
 from display import display_hangman, display_leaderboard, GREEN, RESET, RED
 from high_score import save_high_score, load_high_scores
+from utils import validate_input, calculate_score
 
 def play_hangman():
     """
@@ -26,8 +27,8 @@ def play_hangman():
     while tries < max_tries and word_letters:
         guess = input("Guess a letter: ").upper()  # Prompt the user to guess a letter and convert it to uppercase
 
-        # Ensure the player inputs only a single alphabetic character
-        if len(guess) != 1 or not guess.isalpha():
+        # Validate the input
+        if not validate_input(guess, set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")):
             print("Invalid input. Please enter a single alphabetic character.")
             continue
 
@@ -55,8 +56,8 @@ def play_hangman():
     end_time = datetime.now()  # Record the end time of the game
     game_duration = str(end_time - start_time)  # Calculate the game duration
 
-    # Calculate the score using the basic score calculation method
-    score = 100 / len(word)
+    # Calculate the score using the utility function
+    score = calculate_score(len(word))
 
     # After the loop, determine if the player has won or lost
     if not word_letters:
