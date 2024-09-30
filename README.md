@@ -43,7 +43,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 - **Word Categories**: Organize words into categories (e.g., animals, countries, technology) and allow players to choose a category before starting the game.
 - **External Word Sources**: Utilize external APIs or word lists from online sources to dynamically fetch words, ensuring a vast and varied selection.
 
-## 2. **Enhance Input Validation**
+## ~~2. **Enhance Input Validation**~~
 
 - ~~**Single Letter Enforcement**: Ensure that the player inputs only single alphabetic characters. Reject multiple letters or non-alphabetic inputs with appropriate error messages.~~
 - ~~**Case Insensitivity**: Handle input without case sensitivity, allowing players to enter letters in either uppercase or lowercase without issues.~~
@@ -59,11 +59,11 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 - **Varying Challenges**: Introduce multiple difficulty levels (e.g., Easy, Medium, Hard) that affect factors such as the length of the word, the number of allowed incorrect guesses, or the complexity of the words.
 - **Timed Challenges**: Incorporate time-based challenges where players must guess the word within a certain timeframe, adding urgency to the gameplay.
 
-## 5. **Improve Hangman Display**
+## ~~5. **Improve Hangman Display**~~
 
 - ~~**Animated Graphics**: Enhance the visual representation of the hangman with animations that progress smoothly as the player makes incorrect guesses.~~
 - ~~**Color Coding**: Use colors to differentiate between correct and incorrect guesses, making the game more visually engaging and easier to follow.~~
-- **Clear Screen**: Clear the screen before displaying the updated game state to avoid scrolling and improve readability.
+- ~~**Clear Screen**: Clear the screen before displaying the updated game state to avoid scrolling and improve readability.~~
 
 ## 6. **Implement a Scoring System**
 
