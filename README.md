@@ -2,6 +2,8 @@
 
 Welcome to the Hangman Python Game! This is a simple command-line implementation of the classic Hangman game where players guess letters to uncover a hidden word.
 
+[!Hangman](https://i.imgur.com/H2ELtSs.jpeg)
+
 ## Features
 
 - **Word Selection**: Randomly selects a word from a predefined list.
