@@ -1,4 +1,6 @@
 import random  # Import the random module to select random items from a list
+import json  # Import the json module to handle JSON data
+from datetime import datetime  # Import datetime to record the date and time
 
 def get_random_word():
     """
@@ -98,16 +100,44 @@ def display_hangman(tries):
     ]
     return stages[tries]  # Return the hangman stage corresponding to the number of tries
 
+def save_high_score(player_name, score, word, attempts, game_duration, guesses):
+    """
+    This function saves the high score data to a JSON file.
+    """
+    high_score_data = {
+        "player_name": player_name,
+        "score": score,
+        "date_time": datetime.now().isoformat(),
+        "word_guessed": word,
+        "attempts": attempts,
+        "game_duration": game_duration,
+        "difficulty_level": "default",
+        "guesses": guesses
+    }
+
+    try:
+        with open("hangman_scores.json", "r") as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        data = {"high_scores": []}
+
+    data["high_scores"].append(high_score_data)
+
+    with open("hangman_scores.json", "w") as file:
+        json.dump(data, file, indent=4)
+
 def play_hangman():
     """
     This function contains the main logic of the Hangman game.
     It manages the game flow, user input, and game state.
     """
+    player_name = input("Enter your name: ")  # Prompt the player to enter their name
     word = get_random_word()  # Get a random word for the game
     word_letters = set(word)  # Create a set of unique letters in the word
     guessed_letters = set()  # Create an empty set to store letters guessed by the user
     tries = 0  # Initialize the number of incorrect guesses
     max_tries = 6  # Set the maximum number of allowed incorrect guesses
+    start_time = datetime.now()  # Record the start time of the game
 
     print("Welcome to Hangman!")  # Welcome message to the player
     print(display_hangman(tries))  # Display the initial hangman state (no drawings)
@@ -138,6 +168,12 @@ def play_hangman():
         print(' '.join(display_word))  # Display the current state of the word
         print(f"Tries left: {max_tries - tries}\n")  # Show the number of remaining tries
 
+    end_time = datetime.now()  # Record the end time of the game
+    game_duration = str(end_time - start_time)  # Calculate the game duration
+
+    # Calculate the score using the basic score calculation method
+    score = 100 / len(word)
+
     # After the loop, determine if the player has won or lost
     if not word_letters:
         # If there are no more letters to guess, the player has won
@@ -145,6 +181,9 @@ def play_hangman():
     else:
         # If the player has used all tries, they lose and reveal the word
         print(f"Sorry, you've been hanged. The word was {word}.")
+
+    # Save the high score data
+    save_high_score(player_name, score, word, tries, game_duration, list(guessed_letters))
 
 # This checks if the script is being run directly (not imported) and starts the game
 if __name__ == "__main__":

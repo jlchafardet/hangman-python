@@ -8,6 +8,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 - **User Interaction**: Prompts users to guess letters, providing feedback on each guess.
 - **Hangman Display**: Visually represents the hangman's current state using ASCII art, updating with each incorrect guess.
 - **Game State Management**: Tracks guessed letters, remaining attempts, and determines win/loss conditions.
+- **High Scores**: Tracks and stores high scores in a JSON file.
 
 ## How to Play
 
@@ -50,7 +51,7 @@ To enhance your Hangman game and provide a more engaging experience for players,
 ## 3. **Persist Game State**
 
 - **Save and Load Feature**: Allow players to save their current game state and resume later. This requires storing essential game data (e.g., word, guessed letters, remaining tries) in a file or database.
-- **High Scores**: Implement a high score tracking system that records players' best performances, encouraging competition and replayability.
+- ~~**High Scores**: Implement a high score tracking system that records players' best performances, encouraging competition and replayability.~~
 
 ## 4. **Develop a User Interface (UI)**
 
