@@ -116,7 +116,6 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 Implementing these recommendations will not only improve the functionality and user experience of your Hangman game but also make the codebase more robust, maintainable, and scalable for future developments.
 
 ## Contributing
-
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
