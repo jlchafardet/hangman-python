@@ -32,9 +32,9 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 
 4. **Guess Letters**: Follow the on-screen prompts to guess letters and try to uncover the hidden word before the hangman is fully drawn.
 
-# Recommendations for Improving the Hangman Python Game
+## Recommendations for Improving the Hangman Python Game
 
-To enhance your Hangman game and provide a more engaging experience for players, consider implementing the following improvements:
+## To enhance your Hangman game and provide a more engaging experience for players, consider implementing the following improvements
 
 ## 1. **Expand the Word List**
 
@@ -45,7 +45,7 @@ To enhance your Hangman game and provide a more engaging experience for players,
 ## 2. **Enhance Input Validation**
 
 - **Single Letter Enforcement**: Ensure that the player inputs only single alphabetic characters. Reject multiple letters or non-alphabetic inputs with appropriate error messages.
-- **Case Insensitivity**: Handle input without case sensitivity, allowing players to enter letters in either uppercase or lowercase without issues.
+- ~~**Case Insensitivity**: Handle input without case sensitivity, allowing players to enter letters in either uppercase or lowercase without issues.~~
 - **Duplicate Guess Handling**: Improve feedback for repeated guesses by providing more informative messages or hints.
 
 ## 3. **Persist Game State**
