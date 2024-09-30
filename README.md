@@ -28,7 +28,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 3. **Run the Game**:
 
     ```bash
-    python hangman.py
+    python hangman_game.py
     ```
 
 4. **Guess Letters**: Follow the on-screen prompts to guess letters and try to uncover the hidden word before the hangman is fully drawn.
@@ -81,7 +81,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 
 ## 9. **Refactor and Modularize Code**
 
-- **Code Organization**: Break down the code into multiple modules or classes to improve readability, maintainability, and scalability.
+- ~~**Code Organization**: Break down the code into multiple modules or classes to improve readability, maintainability, and scalability.~~
 - **Reusability**: Encapsulate functionalities (e.g., word selection, input handling, display rendering) into separate functions or classes, promoting code reuse.
 
 ## 10. **Add Unit Tests**
