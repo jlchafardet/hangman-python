@@ -4,7 +4,19 @@ def get_random_word():
     """
     This function selects and returns a random word from a predefined list of words.
     """
-    words = ['python', 'hangman', 'challenge', 'programming', 'developer']  # List of possible words
+    words = [
+        'python', 'hangman', 'challenge', 'programming', 'developer',
+        'algorithm', 'function', 'variable', 'syntax', 'exception',
+        'iteration', 'recursion', 'compiler', 'interpreter', 'debugging',
+        'inheritance', 'polymorphism', 'encapsulation', 'abstraction',
+        'lambda', 'database', 'framework', 'library', 'module',
+        'package', 'virtualization', 'encryption', 'compression',
+        'deployment', 'container', 'orchestration', 'binary', 'cache',
+        'optimization', 'parallelization', 'threading', 'asynchronous',
+        'synchronization', 'networking', 'protocol', 'architecture',
+        'interface', 'middleware', 'scalability', 'firewall', 'kernel',
+        'router', 'switch', 'gateway', 'bandwidth', 'latency'
+    ]  # Expanded list of possible words
     chosen_word = random.choice(words)  # Randomly select a word from the list
     return chosen_word.upper()  # Return the chosen word in uppercase letters
 
@@ -104,7 +116,7 @@ def play_hangman():
     # Continue the game until the player runs out of tries or guesses all letters
     while tries < max_tries and word_letters:
         guess = input("Guess a letter: ").upper()  # Prompt the user to guess a letter and convert it to uppercase
-        
+
         if guess in guessed_letters:
             # If the letter has already been guessed, inform the user
             print("You already guessed that letter.")
@@ -118,14 +130,14 @@ def play_hangman():
             guessed_letters.add(guess)  # Add the letter to guessed_letters
             tries += 1  # Increment the number of incorrect guesses
             print(f"Sorry, {guess} is not in the word.")  # Inform the user of the incorrect guess
-        
+
         print(display_hangman(tries))  # Display the current state of the hangman after the guess
-        
+
         # Create a list that shows the current state of the word with guessed letters and blanks
         display_word = [letter if letter in guessed_letters else '_' for letter in word]
         print(' '.join(display_word))  # Display the current state of the word
         print(f"Tries left: {max_tries - tries}\n")  # Show the number of remaining tries
-    
+
     # After the loop, determine if the player has won or lost
     if not word_letters:
         # If there are no more letters to guess, the player has won
