@@ -2,6 +2,13 @@ import random  # Import the random module to select random items from a list
 import json  # Import the json module to handle JSON data
 from datetime import datetime  # Import datetime to record the date and time
 
+# Define ANSI color codes
+RESET = "\033[0m"
+GREEN = "\033[32m"
+RED = "\033[31m"
+BROWN = "\033[33m"
+WHITE = "\033[37m"
+
 def get_random_word():
     """
     This function selects and returns a random word from a predefined list of words.
@@ -29,74 +36,74 @@ def display_hangman(tries):
     """
     stages = [
         # Stage 0: No parts of the hangman are drawn
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
            |    
            |   
            |   
            |   
-        --------
+        --------{RESET}
         """,
         # Stage 1: Head is drawn
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
-           |    O
+           |    {WHITE}O{RESET}
            |   
            |   
            |   
-        --------
+        --------{RESET}
         """,
         # Stage 2: Head and torso are drawn
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
-           |    O
-           |    |
+           |    {WHITE}O{RESET}
+           |    {WHITE}|{RESET}
            |   
            |   
-        --------
+        --------{RESET}
         """,
         # Stage 3: Head, torso, and one arm are drawn
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
-           |    O
-           |   /|
+           |    {WHITE}O{RESET}
+           |   {WHITE}/|{RESET}
            |   
            |   
-        --------
+        --------{RESET}
         """,
         # Stage 4: Head, torso, and both arms are drawn
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
-           |    O
-           |   /|\\
+           |    {WHITE}O{RESET}
+           |   {WHITE}/|\\{RESET}
            |   
            |   
-        --------
+        --------{RESET}
         """,
         # Stage 5: Head, torso, both arms, and one leg are drawn
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
-           |    O
-           |   /|\\
-           |   / 
+           |    {WHITE}O{RESET}
+           |   {WHITE}/|\\{RESET}
+           |   {WHITE}/ {RESET}
            |   
-        --------
+        --------{RESET}
         """,
         # Stage 6: Full hangman is drawn (final stage)
-        """
-           ------
+        f"""
+           {BROWN}------
            |    |
-           |    O
-           |   /|\\
-           |   / \\
+           |    {WHITE}O{RESET}
+           |   {WHITE}/|\\{RESET}
+           |   {WHITE}/ \\{RESET}
            |   
-        --------
+        --------{RESET}
         """
     ]
     return stages[tries]  # Return the hangman stage corresponding to the number of tries
@@ -160,12 +167,12 @@ def play_hangman():
             # If the guessed letter is in the word
             guessed_letters.add(guess)  # Add the letter to guessed_letters
             word_letters.remove(guess)  # Remove the letter from word_letters as it's been guessed
-            print(f"Good job! {guess} is in the word.")  # Inform the user of the correct guess
+            print(f"{GREEN}Good job! {guess} is in the word.{RESET}")  # Inform the user of the correct guess
         else:
             # If the guessed letter is not in the word
             guessed_letters.add(guess)  # Add the letter to guessed_letters
             tries += 1  # Increment the number of incorrect guesses
-            print(f"Sorry, {guess} is not in the word.")  # Inform the user of the incorrect guess
+            print(f"{RED}Sorry, {guess} is not in the word.{RESET}")  # Inform the user of the incorrect guess
 
         print(display_hangman(tries))  # Display the current state of the hangman after the guess
 

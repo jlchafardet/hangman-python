@@ -71,7 +71,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 ## 7. **Improve Hangman Display**
 
 - **Animated Graphics**: Enhance the visual representation of the hangman with animations that progress smoothly as the player makes incorrect guesses.
-- **Color Coding**: Use colors to differentiate between correct and incorrect guesses, making the game more visually engaging and easier to follow.
+- ~~**Color Coding**: Use colors to differentiate between correct and incorrect guesses, making the game more visually engaging and easier to follow.~~
 
 ## 8. **Implement a Scoring System**
 
