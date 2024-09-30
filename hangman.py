@@ -19,6 +19,7 @@ def get_random_word():
         'interface', 'middleware', 'scalability', 'firewall', 'kernel',
         'router', 'switch', 'gateway', 'bandwidth', 'latency'
     ]  # Expanded list of possible words
+    
     chosen_word = random.choice(words)  # Randomly select a word from the list
     return chosen_word.upper()  # Return the chosen word in uppercase letters
 

@@ -122,4 +122,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-*Happy Coding!*
+*Happy Coding!* :smile:
