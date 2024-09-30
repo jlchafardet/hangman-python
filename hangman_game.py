@@ -1,6 +1,6 @@
 from datetime import datetime
 from word_selection import get_random_word
-from display import display_hangman, display_leaderboard
+from display import display_hangman, display_leaderboard, GREEN, RESET, RED
 from high_score import save_high_score, load_high_scores
 
 def play_hangman():
