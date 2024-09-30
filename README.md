@@ -37,7 +37,7 @@ To enhance your Hangman game and provide a more engaging experience for players,
 
 ## 1. **Expand the Word List**
 
-- **Diverse Vocabulary**: Incorporate a larger and more diverse set of words to increase the game's challenge and replayability.
+- ~~**Diverse Vocabulary**: Incorporate a larger and more diverse set of words to increase the game's challenge and replayability.~~
 - **Word Categories**: Organize words into categories (e.g., animals, countries, technology) and allow players to choose a category before starting the game.
 - **External Word Sources**: Utilize external APIs or word lists from online sources to dynamically fetch words, ensuring a vast and varied selection.
 
