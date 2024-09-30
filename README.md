@@ -44,7 +44,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 
 ## 2. **Enhance Input Validation**
 
-- **Single Letter Enforcement**: Ensure that the player inputs only single alphabetic characters. Reject multiple letters or non-alphabetic inputs with appropriate error messages.
+- ~~**Single Letter Enforcement**: Ensure that the player inputs only single alphabetic characters. Reject multiple letters or non-alphabetic inputs with appropriate error messages.~~
 - ~~**Case Insensitivity**: Handle input without case sensitivity, allowing players to enter letters in either uppercase or lowercase without issues.~~
 - ~~**Duplicate Guess Handling**: Improve feedback for repeated guesses by providing more informative messages or hints.~~
 

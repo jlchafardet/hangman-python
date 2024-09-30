@@ -148,6 +148,11 @@ def play_hangman():
     while tries < max_tries and word_letters:
         guess = input("Guess a letter: ").upper()  # Prompt the user to guess a letter and convert it to uppercase
 
+        # Ensure the player inputs only a single alphabetic character
+        if len(guess) != 1 or not guess.isalpha():
+            print("Invalid input. Please enter a single alphabetic character.")
+            continue
+
         if guess in guessed_letters:
             # If the letter has already been guessed, inform the user
             print("You already guessed that letter.")
