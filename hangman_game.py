@@ -1,6 +1,6 @@
 from datetime import datetime
 from word_selection import get_random_word
-from display import display_hangman, display_leaderboard, GREEN, RESET, RED
+from display import display_hangman, display_leaderboard, clear_screen, GREEN, RESET, RED
 from high_score import save_high_score, load_high_scores
 from utils import validate_input, calculate_score
 
@@ -46,6 +46,7 @@ def play_hangman():
             tries += 1  # Increment the number of incorrect guesses
             print(f"{RED}Sorry, {guess} is not in the word.{RESET}")  # Inform the user of the incorrect guess
 
+        clear_screen()  # Clear the screen before displaying the updated game state
         print(display_hangman(tries))  # Display the current state of the hangman after the guess
 
         # Create a list that shows the current state of the word with guessed letters and blanks

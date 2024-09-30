@@ -1,4 +1,4 @@
-from datetime import datetime
+import os
 
 # Define ANSI color codes
 RESET = "\033[0m"
@@ -9,6 +9,12 @@ WHITE = "\033[37m"
 BLUE = "\033[34m"
 YELLOW = "\033[33m"
 LIGHT_GRAY = "\033[37m"
+
+def clear_screen():
+    """
+    Clears the terminal screen.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def display_hangman(tries):
     """
