@@ -9,6 +9,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 - **Hangman Display**: Visually represents the hangman's current state using ASCII art, updating with each incorrect guess.
 - **Game State Management**: Tracks guessed letters, remaining attempts, and determines win/loss conditions.
 - **High Scores**: Tracks and stores high scores in a JSON file.
+- **Leaderboard**: Displays the top 5 high scores with color coding.
 
 ## How to Play
 
@@ -76,7 +77,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 ## 8. **Implement a Scoring System**
 
 - **Points Allocation**: Assign points for each correct guess and deduct points for incorrect ones. This adds a layer of strategy as players aim to maximize their scores.
-- **Leaderboard**: Create a leaderboard that displays high scores, fostering a sense of competition among players.
+- ~~**Leaderboard**: Create a leaderboard that displays high scores, fostering a sense of competition among players.~~
 
 ## 9. **Refactor and Modularize Code**
 

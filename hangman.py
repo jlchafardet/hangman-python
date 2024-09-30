@@ -8,6 +8,9 @@ GREEN = "\033[32m"
 RED = "\033[31m"
 BROWN = "\033[33m"
 WHITE = "\033[37m"
+BLUE = "\033[34m"
+YELLOW = "\033[33m"
+LIGHT_GRAY = "\033[37m"
 
 def get_random_word():
     """
@@ -134,11 +137,41 @@ def save_high_score(player_name, score, word, attempts, game_duration, guesses):
     with open("hangman_scores.json", "w") as file:
         json.dump(data, file, indent=4)
 
+def load_high_scores():
+    """
+    This function loads the high scores from the JSON file.
+    """
+    try:
+        with open("hangman_scores.json", "r") as file:
+            data = json.load(file)
+            return data["high_scores"]
+    except FileNotFoundError:
+        return []
+
+def display_leaderboard():
+    """
+    This function displays the top 5 high scores with color coding.
+    """
+    high_scores = load_high_scores()
+    high_scores.sort(key=lambda x: x["score"], reverse=True)  # Sort by score in descending order
+
+    print("\nLeaderboard:")
+    for i, score in enumerate(high_scores[:5]):
+        color = {
+            0: GREEN,
+            1: BLUE,
+            2: YELLOW,
+            3: BROWN,
+            4: LIGHT_GRAY
+        }.get(i, RESET)
+        print(f"{color}{i + 1}. {score['player_name']} - {score['score']} - {score['date_time']} - {score['word_guessed']}{RESET}")
+
 def play_hangman():
     """
     This function contains the main logic of the Hangman game.
     It manages the game flow, user input, and game state.
     """
+    display_leaderboard()  # Show the leaderboard before starting the game
     player_name = input("Enter your name: ")  # Prompt the player to enter their name
     word = get_random_word()  # Get a random word for the game
     word_letters = set(word)  # Create a set of unique letters in the word
@@ -199,7 +232,7 @@ def play_hangman():
     save_high_score(player_name, score, word, tries, game_duration, list(guessed_letters))
 
     # Ask the player if they want to play again
-    play_again = input("Do you want to play again? (yes/no): ").strip().lower()
+    play_again = input(f"{GREEN}Do you want to play again? (yes/no): {RESET}").strip().lower()
     if play_again == 'yes':
         play_hangman()  # Restart the game if the player wants to play again
     else:
