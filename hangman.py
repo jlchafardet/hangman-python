@@ -198,6 +198,13 @@ def play_hangman():
     # Save the high score data
     save_high_score(player_name, score, word, tries, game_duration, list(guessed_letters))
 
+    # Ask the player if they want to play again
+    play_again = input("Do you want to play again? (yes/no): ").strip().lower()
+    if play_again == 'yes':
+        play_hangman()  # Restart the game if the player wants to play again
+    else:
+        print("Thank you for playing Hangman! Goodbye!")  # Exit message
+
 # This checks if the script is being run directly (not imported) and starts the game
 if __name__ == "__main__":
     play_hangman()

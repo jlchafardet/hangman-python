@@ -93,7 +93,7 @@ Welcome to the Hangman Python Game! This is a simple command-line implementation
 - **Sound Effects**: Add audio feedback for correct and incorrect guesses, enhancing the immersive experience.
 - **Hints System**: Provide optional hints that players can use to reveal certain letters or get clues about the word.
 - **Responsive Design**: If transitioning to a GUI or web interface, ensure that the design is responsive and adapts well to different screen sizes and devices.
-- **Replayability**: Ask the player if they want to play again.
+- ~~**Replayability**: Ask the player if they want to play again.~~
 
 ## 12. **Internationalization and Localization**
 
